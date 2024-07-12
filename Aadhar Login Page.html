@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhar Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url(images/in.jpg);
+        }
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"], input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .captcha {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .captcha-image {
+            flex: 1;
+        }
+        .captcha-input {
+            flex: 2;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header align="center">
+        <a align="center" href="Home Page.html"><button>Home</button></a>
+    </header>
+    
+    
+    <div class="container">
+        <h2>Aadhar Login</h2>
+        <form action="Aadhar OTP page.html" method="get" onsubmit="return validate()">
+            <label for="aadhar_number">Aadhar Number:</label>
+            <input type="text" id="aadhar_number" name="aadhar_number" maxlength="12" pattern="[0-9]{12}" title="Aadhar number must be 12 digits long" required>
+
+            <label for="mobile_number">Registered Mobile Number:</label>
+            <input type="tel" id="mobile_number" name="mobile_number" maxlength="10" pattern="[0-9]{10}" title="Mobile number must be 10 digits long" required>
+
+            <div class="captcha">
+                <img class="captcha-image" src="images/Captcha.png" alt="CAPTCHA">
+                <input type="text" class="captcha-input" id="captcha"  placeholder="Enter CAPTCHA" required>
+            </div>
+
+            <input type="submit" value="Get OTP">
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var aadharNumber = document.getElementById("aadhar_number").value;
+            var mobileNumber = document.getElementById("mobile_number").value;
+            var captcha = document.getElementById("captcha").value;
+            var formError = document.getElementById("formError");
+
+            if (!aadharNumber || aadharNumber.length !== 12) {
+                formError.textContent = "Please enter a valid Aadhar number (12 digits).";
+                return false;
+            }
+
+            if (!mobileNumber || mobileNumber.length !== 10) {
+                formError.textContent = "Please enter a valid mobile number (10 digits).";
+                return false;
+            }
+
+            if (captcha !== "W68HP") {
+                alert("CAPTCHA not matched");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

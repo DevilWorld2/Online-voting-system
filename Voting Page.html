@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Political Parties Voting Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .party {
+            margin-bottom: 20px;
+        }
+        .party img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .party-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .vote-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .vote-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <header align="center">
+            <a align="center" href="Home Page.html"><button>Home</button></a>
+        </header>
+        <h1>Vote for Your Favorite Political Party</h1>
+    </div>
+    <div class="container">
+        <div class="party">
+            <img src="images/BJP.jpg" alt="Party 1 Logo">
+            <span class="party-name">Bharatiya Janata Party</span>
+            <a href="BJP Thanks.html"><button class="vote-btn" onclick="vote('Bharatiya Janata Party')">Vote</button></a>
+        </div>
+        <div class="party">
+            <img src="images/Congress.png" alt="Party 1 Logo">
+            <span class="party-name">Indian National Congress</span>
+            <a href="Congress Thanks.html"><button class="vote-btn" onclick="vote('Indian National Congress')">Vote</button></a>
+        </div>
+        <div class="party">
+            <img src="images/aap.jpg" alt="Party 1 Logo">
+            <span class="party-name">Aam Aadmi Party</span>
+            <a href="AAP Thanks.html"><button class="vote-btn" onclick="vote('Aam Aadmi Party')">Vote</button></a>
+        </div>
+        <div class="party">
+            <img src="images/BSP.png" alt="Party 2 Logo">
+            <span class="party-name">Bahujan Samaj Party</span>
+            <a href="BSP Thanks.html"><button class="vote-btn" onclick="vote('Bahujan Samaj Party')">Vote</button></a>
+        </div>
+        <!-- Add more parties as needed -->
+    </div>
+
+    <script>
+        function vote(partyName) 
+        {
+            alert("Are you confirmed your vote to  " + partyName);
+            // Here you can add logic to record the vote for the selected party
+            // This could involve sending data to a server using AJAX or some other method
+        }
+    </script>
+</body>
+</html>

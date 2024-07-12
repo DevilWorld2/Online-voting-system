@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhar OTP Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/in.jpg);
+        }
+        .header {
+            background-color: #e91919;
+            background-image: url(images/in.jpg);
+            color: #d61a1a;
+            padding: 30px;
+            font-size: 30px;
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <header align="center">
+            <a align="center" href="Home Page.html"><button>Home</button></a>
+        </header>
+        <h1>Your Vote Your Future</h1>
+    </div>
+    <div class="container">
+        <img src="images/votinghand.png">
+        <h2 align="center"> OTP Authentication</h2>
+        <p align="center">Enter Aadhar OTP to proceed</p>
+        <form align="center" action="Voting Page.html" method="get" onsubmit="return validate()">
+            <input type="text" id="otp" name="otp" required><br><br>
+            <span id="otpError" class="error"></span><br>
+            <input type="submit" value="Proceed For Voting">
+        </form>
+    </div>
+
+    <script>
+        function validate() {
+            var otpInput = document.getElementById("otp").value;
+            var otpError = document.getElementById("otpError");
+
+            // Validate OTP (must be exactly 6 digits)
+            if (!/^\d{6}$/.test(otpInput)) {
+                otpError.innerText = "OTP must be exactly 6 digits";
+                return false; // Prevent form submission
+            }
+            else if(otpinput!==123456){
+              alert("OTP not matched")
+              return false;
+            }
+
+            // If OTP is valid, clear error message and allow form submission
+            otpError.innerText = "";
+            return true;
+        }
+    </script>
+</body>
+</html>
